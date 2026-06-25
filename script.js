@@ -162,10 +162,10 @@
       mouseRadius: 180,
       baseSpeed: 0.3,
       particleSize: 1.2,
-      lineOpacity: 0.32,
-      particleOpacity: 0.70,
+      lineOpacity: 0.45,
+      particleOpacity: 0.85,
       accentColor: { r: 14, g: 116, b: 144 },
-      baseColor: { r: 65, g: 65, b: 80 },
+      baseColor: { r: 40, g: 40, b: 55 },
     };
 
     function getParticleCount() {
