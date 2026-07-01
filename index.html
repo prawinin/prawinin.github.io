@@ -5,631 +5,196 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Prawin Kumar — Building AI Enabled Systems</title>
   <meta name="description" content="Portfolio of Prawin Kumar — AI systems engineer building production-grade infrastructure across legal AI, construction tech, molecular dynamics, and open-source LLMs.">
-  <meta name="theme-color" content="#fafaf9">
+  <meta name="theme-color" content="#f5f5f0">
 
-  <!-- Open Graph -->
   <meta property="og:type" content="website">
   <meta property="og:title" content="Prawin Kumar — Building AI Enabled Systems">
   <meta property="og:description" content="Building AI systems that ship. Open source LLMs, construction AI, molecular dynamics, and more.">
   <meta property="og:url" content="https://prawinin.github.io/">
-  <meta property="og:site_name" content="Prawin Kumar">
 
-  <!-- Twitter -->
-  <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Prawin Kumar — Building AI Enabled Systems">
-  <meta name="twitter:description" content="Building AI systems that ship.">
-
-  <!-- Fonts: Instrument Serif + Geist Sans + JetBrains Mono -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
-  <!-- Geist Sans from CDN -->
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/geist@1.3.1/dist/fonts/geist-sans/style.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
 
   <link rel="stylesheet" href="style.css">
-
-  <style>
-    /* Project card generated visuals (replace with real screenshots later) */
-    .project-visual-gen {
-      width: 100%;
-      height: 100%;
-      min-height: 300px;
-      position: relative;
-      overflow: hidden;
-    }
-
-    /* Neev - Construction/Architecture */
-    .pv-neev {
-      background:
-        linear-gradient(135deg, #0d1117 0%, #111318 50%, #0a0f1a 100%);
-    }
-    .pv-neev::before {
-      content: '';
-      position: absolute;
-      inset: 30px;
-      border: 1px solid rgba(14, 116, 144, 0.15);
-      border-radius: 8px;
-      background:
-        repeating-linear-gradient(0deg, transparent, transparent 39px, rgba(14, 116, 144, 0.04) 39px, rgba(14, 116, 144, 0.04) 40px),
-        repeating-linear-gradient(90deg, transparent, transparent 39px, rgba(14, 116, 144, 0.04) 39px, rgba(14, 116, 144, 0.04) 40px);
-    }
-    .pv-neev::after {
-      content: '';
-      position: absolute;
-      bottom: 40px;
-      left: 50%;
-      transform: translateX(-50%);
-      width: 140px;
-      height: 100px;
-      border: 1.5px solid rgba(14, 116, 144, 0.3);
-      border-bottom: none;
-      clip-path: polygon(10% 100%, 10% 40%, 25% 40%, 25% 20%, 40% 20%, 40% 0%, 60% 0%, 60% 20%, 75% 20%, 75% 40%, 90% 40%, 90% 100%);
-    }
-    .pv-neev .pv-dot {
-      position: absolute;
-      width: 4px;
-      height: 4px;
-      border-radius: 50%;
-      background: var(--accent);
-      opacity: 0.6;
-      animation: pulse 3s ease-in-out infinite;
-    }
-    .pv-neev .pv-dot:nth-child(1) { top: 25%; left: 30%; animation-delay: 0s; }
-    .pv-neev .pv-dot:nth-child(2) { top: 45%; left: 65%; animation-delay: 0.8s; }
-    .pv-neev .pv-dot:nth-child(3) { top: 70%; left: 40%; animation-delay: 1.5s; }
-    .pv-neev .pv-dot:nth-child(4) { top: 35%; left: 75%; animation-delay: 2.2s; }
-
-    /* KineticSketch - Molecular */
-    .pv-kinetic {
-      background:
-        linear-gradient(135deg, #0d1117 0%, #0f1118 50%, #0d0a1a 100%);
-    }
-    .pv-kinetic::before {
-      content: '';
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      width: 120px;
-      height: 120px;
-      border: 1.5px solid rgba(180, 83, 9, 0.25);
-      border-radius: 50%;
-      box-shadow:
-        0 0 0 30px rgba(180, 83, 9, 0.03),
-        0 0 0 60px rgba(180, 83, 9, 0.02);
-    }
-    .pv-kinetic::after {
-      content: '';
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      width: 50px;
-      height: 50px;
-      border-radius: 50%;
-      background: radial-gradient(circle, rgba(180, 83, 9, 0.3), transparent 70%);
-      box-shadow:
-        60px -30px 0 6px rgba(14, 116, 144, 0.2),
-        -50px 40px 0 4px rgba(5, 150, 105, 0.2),
-        40px 50px 0 5px rgba(180, 83, 9, 0.15),
-        -60px -20px 0 3px rgba(14, 116, 144, 0.15);
-    }
-    .pv-kinetic .pv-bond {
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      height: 1px;
-      background: linear-gradient(90deg, transparent, rgba(180, 83, 9, 0.2), transparent);
-      transform-origin: left center;
-    }
-    .pv-kinetic .pv-bond:nth-child(1) { width: 80px; transform: rotate(30deg); }
-    .pv-kinetic .pv-bond:nth-child(2) { width: 70px; transform: rotate(150deg); }
-    .pv-kinetic .pv-bond:nth-child(3) { width: 90px; transform: rotate(250deg); }
-    .pv-kinetic .pv-bond:nth-child(4) { width: 65px; transform: rotate(330deg); }
-
-    /* Craft with AI - Code/Education */
-    .pv-craft {
-      background:
-        linear-gradient(135deg, #0d1117 0%, #12110d 50%, #0d1117 100%);
-    }
-    .pv-craft::before {
-      content: '01\A02\A03\A04\A05\A06\A07\A08\A09\A10\A11\A12';
-      white-space: pre;
-      position: absolute;
-      left: 30px;
-      top: 30px;
-      font-family: var(--mono);
-      font-size: 0.65rem;
-      color: rgba(113, 113, 122, 0.3);
-      line-height: 1.9;
-    }
-    .pv-craft::after {
-      content: '';
-      position: absolute;
-      left: 60px;
-      top: 30px;
-      width: 1px;
-      height: calc(100% - 60px);
-      background: rgba(255, 255, 255, 0.04);
-    }
-    .pv-craft .pv-line {
-      position: absolute;
-      left: 76px;
-      height: 8px;
-      border-radius: 4px;
-      opacity: 0.15;
-    }
-    .pv-craft .pv-line:nth-child(1) { top: 34px; width: 90px; background: #b45309; }
-    .pv-craft .pv-line:nth-child(2) { top: 53px; width: 140px; background: #0e7490; left: 96px; }
-    .pv-craft .pv-line:nth-child(3) { top: 72px; width: 110px; background: #f59e0b; left: 96px; }
-    .pv-craft .pv-line:nth-child(4) { top: 91px; width: 80px; background: #059669; left: 116px; }
-    .pv-craft .pv-line:nth-child(5) { top: 110px; width: 160px; background: #0e7490; left: 96px; }
-    .pv-craft .pv-line:nth-child(6) { top: 129px; width: 60px; background: #b45309; left: 76px; }
-    .pv-craft .pv-line:nth-child(7) { top: 148px; width: 120px; background: #f59e0b; left: 96px; }
-    .pv-craft .pv-line:nth-child(8) { top: 167px; width: 100px; background: #059669; left: 116px; }
-    .pv-craft .pv-line:nth-child(9) { top: 186px; width: 70px; background: #0e7490; left: 96px; }
-    .pv-craft .pv-line:nth-child(10) { top: 205px; width: 130px; background: #b45309; left: 76px; }
-    .pv-craft .pv-line:nth-child(11) { top: 224px; width: 90px; background: #f59e0b; left: 96px; }
-    .pv-craft .pv-line:nth-child(12) { top: 243px; width: 110px; background: #059669; left: 116px; }
-
-    /* Cursor blink on craft */
-    .pv-cursor {
-      position: absolute;
-      left: 166px;
-      top: 129px;
-      width: 2px;
-      height: 14px;
-      background: var(--accent);
-      animation: pulse 1s step-end infinite;
-    }
-  </style>
 </head>
 
-<body class="page-loading">
+<body>
 
-  <!-- Particle Canvas -->
-  <canvas id="particle-canvas" aria-hidden="true"></canvas>
-
-  <!-- ═══ NAVIGATION ═══ -->
-  <nav class="nav" id="nav">
-    <div class="container nav-inner">
-      <a href="#" class="nav-brand" id="nav-brand">
-        <span class="nav-name">Prawin Kumar.</span>
-      </a>
-
-      <div class="nav-links" id="nav-links">
-        <a href="#about">About</a>
-        <a href="#projects">Projects</a>
-        <a href="#models">Models</a>
-        <a href="mailto:prawin@vyapai.tech?subject=Get%20in%20Touch%20-%20Prawin%20Kumar&body=Hi%20Prawin%2C%0A%0A">Contact</a>
-        <a href="https://vyapai.tech/" target="_blank" rel="noopener" class="nav-cta">
-          vyapai.tech
-          <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" style="width:14px;height:14px">
-            <path d="M7 13L13 7M13 7H7M13 7V13"/>
-          </svg>
-        </a>
+  <nav class="site-nav" id="site-nav">
+    <div class="nav-inner">
+      <a href="#" class="nav-brand" data-view="0">Prawin Kumar.</a>
+      <div class="nav-links">
+        <a href="#" class="nav-link active" data-view="0">About</a>
+        <a href="#" class="nav-link" data-view="1">Work</a>
+        <a href="#" class="nav-link" data-view="2">Contact</a>
       </div>
-
-      <button class="nav-hamburger" id="nav-hamburger" aria-label="Toggle menu">
-        <span></span>
-        <span></span>
-        <span></span>
-      </button>
-
-      <div class="nav-mobile" id="nav-mobile">
-        <a href="#about">About</a>
-        <a href="#projects">Projects</a>
-        <a href="#models">Models</a>
-        <a href="mailto:prawin@vyapai.tech?subject=Get%20in%20Touch%20-%20Prawin%20Kumar&body=Hi%20Prawin%2C%0A%0A">Contact</a>
-        <a href="https://vyapai.tech/" target="_blank" rel="noopener">vyapai.tech →</a>
+      <div class="nav-socials">
+        <a href="https://huggingface.co/prawinin" target="_blank" rel="noopener" aria-label="Hugging Face">
+          <svg viewBox="0 0 24 24" fill="currentColor" width="18" height="18" xmlns="http://www.w3.org/2000/svg"><path d="M12.025 1.13c-5.77 0-10.449 4.647-10.449 10.378 0 1.112.178 2.181.503 3.185.064-.222.203-.444.416-.577a.96.96 0 0 1 .524-.15c.293 0 .584.124.84.284.278.173.48.408.71.694.226.282.458.611.684.951v-.014c.017-.324.106-.622.264-.874s.403-.487.762-.543c.3-.047.596.06.787.203s.31.313.4.467c.15.257.212.468.233.542.01.026.653 1.552 1.657 2.54.616.605 1.01 1.223 1.082 1.912.055.537-.096 1.059-.38 1.572.637.121 1.294.187 1.967.187.657 0 1.298-.063 1.921-.178-.287-.517-.44-1.041-.384-1.581.07-.69.465-1.307 1.081-1.913 1.004-.987 1.647-2.513 1.657-2.539.021-.074.083-.285.233-.542.09-.154.208-.323.4-.467a1.08 1.08 0 0 1 .787-.203c.359.056.604.29.762.543s.247.55.265.874v.015c.225-.34.457-.67.683-.952.23-.286.432-.52.71-.694.257-.16.547-.284.84-.285a.97.97 0 0 1 .524.151c.228.143.373.388.43.625l.006.04a10.3 10.3 0 0 0 .534-3.273c0-5.731-4.678-10.378-10.449-10.378M8.327 6.583a1.5 1.5 0 0 1 .713.174 1.487 1.487 0 0 1 .617 2.013c-.183.343-.762-.214-1.102-.094-.38.134-.532.914-.917.71a1.487 1.487 0 0 1 .69-2.803m7.486 0a1.487 1.487 0 0 1 .689 2.803c-.385.204-.536-.576-.916-.71-.34-.12-.92.437-1.103.094a1.487 1.487 0 0 1 .617-2.013 1.5 1.5 0 0 1 .713-.174m-10.68 1.55a.96.96 0 1 1 0 1.921.96.96 0 0 1 0-1.92m13.838 0a.96.96 0 1 1 0 1.92.96.96 0 0 1 0-1.92M8.489 11.458c.588.01 1.965 1.157 3.572 1.164 1.607-.007 2.984-1.155 3.572-1.164.196-.003.305.12.305.454 0 .886-.424 2.328-1.563 3.202-.22-.756-1.396-1.366-1.63-1.32q-.011.001-.02.006l-.044.026-.01.008-.03.024q-.018.017-.035.036l-.032.04a1 1 0 0 0-.058.09l-.014.025q-.049.088-.11.19a1 1 0 0 1-.083.116 1.2 1.2 0 0 1-.173.18q-.035.029-.075.058a1.3 1.3 0 0 1-.251-.243 1 1 0 0 1-.076-.107c-.124-.193-.177-.363-.337-.444-.034-.016-.104-.008-.2.022q-.094.03-.216.087-.06.028-.125.063l-.13.074q-.067.04-.136.086a3 3 0 0 0-.135.096 3 3 0 0 0-.26.219 2 2 0 0 0-.12.121 2 2 0 0 0-.106.128l-.002.002a2 2 0 0 0-.09.132l-.001.001a1.2 1.2 0 0 0-.105.212q-.013.036-.024.073c-1.139-.875-1.563-2.317-1.563-3.203 0-.334.109-.457.305-.454m.836 10.354c.824-1.19.766-2.082-.365-3.194-1.13-1.112-1.789-2.738-1.789-2.738s-.246-.945-.806-.858-.97 1.499.202 2.362c1.173.864-.233 1.45-.685.64-.45-.812-1.683-2.896-2.322-3.295s-1.089-.175-.938.647 2.822 2.813 2.562 3.244-1.176-.506-1.176-.506-2.866-2.567-3.49-1.898.473 1.23 2.037 2.16c1.564.932 1.686 1.178-1.464 1.53s-3.675-2.511-4-1.297c-.323 1.214 3.524 1.567 3.287 2.405-.238.839-2.71-1.587-3.216-.642-.506.946 3.49 2.056-3.522 2.064-1.29.33-4.568 1.028-5.713-.624m5.349 0c-.824-1.19-.766-2.082.365-3.194 1.13-1.112 1.789-2.738 1.789-2.738s.246-.945.806-.858.97 1.499-.202 2.362c-1.173.864.233 1.45.685.64.451-.812 1.683-2.896 2.322-3.295s1.089-.175.938.647-2.822 2.813-2.562 3.244 1.176-.506 1.176-.506 2.866-2.567 3.49-1.898-.473 1.23-2.037 2.16c-1.564.932-1.686 1.178-1.464 1.53s3.675-2.511 4-1.297c.323 1.214-3.524 1.567-3.287 2.405.238.839 2.71-1.587 3.216-.642.506.946-3.49 2.056-3.522 2.064-1.29.33-4.568 1.028-5.713-.624"/></svg>
+        </a>
+        <a href="https://github.com/prawinin" target="_blank" rel="noopener" aria-label="GitHub">
+          <svg viewBox="0 0 24 24" fill="currentColor" width="18" height="18"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
+        </a>
+        <a href="mailto:prawin@vyapai.tech" aria-label="Email">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="18" height="18"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+        </a>
       </div>
     </div>
   </nav>
 
+  <div id="app">
 
-  <!-- ═══ HERO ═══ -->
-  <section class="hero" id="hero">
-    <div class="hero-glow" aria-hidden="true"></div>
-    <div class="hero-grid" aria-hidden="true"></div>
+    <section class="page-panel page-panel--intro active" data-view-index="0" id="panel-intro">
+      <canvas id="cursor-glow" aria-hidden="true"></canvas>
 
-    <div class="container">
-      <div class="hero-content">
-
-        <h1 class="hero-title">
-          <span class="line"><span class="line-inner">Building</span></span>
-          <span class="line"><span class="line-inner">AI enabled</span></span>
-          <span class="line"><span class="line-inner"><em>Systems.</em></span></span>
-        </h1>
-
-        <p class="hero-sub word-reveal">
-          I design, build, and deploy production-grade AI infrastructure 
-          across industries — engineering systems that operate at scale, 
-          solve real problems, and ship to production.
+      <div class="intro-content">
+        <div class="intro-tag">AI Systems Engineer · IIT Guwahati</div>
+        <h1 class="intro-heading">Prawin Kumar</h1>
+        <p class="intro-text">
+          I build AI pipelines and scalable infrastructure that actually ships to production. As the founder of <strong>VyapAI</strong>, I engineer deployment-ready AI systems across domains ranging from legal intelligence to molecular dynamics. For me, the core principles of systems engineering remain the same regardless of the field: code has to perform, scale, and deliver real impact. You can see my commercial deployments and ongoing enterprise work at <a href="https://vyapai.tech" target="_blank" rel="noopener" class="text-link">VyapAI.tech</a>.
         </p>
+        <div class="intro-buttons">
+          <a href="#" class="btn-fill" data-view="1">View My Work</a>
+          <a href="https://vyapai.tech" target="_blank" rel="noopener" class="btn-outline">VyapAI.tech ↗</a>
+        </div>
+        <div class="scroll-cue">
+          <span>scroll</span>
+          <div class="scroll-cue-bar"></div>
+        </div>
+      </div>
+    </section>
 
-        <div class="hero-actions">
-          <a href="#projects" class="btn-solid">
-            View Work
-            <svg class="btn-icon" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2">
-              <path d="M10 4L10 16M10 16L16 10M10 16L4 10"/>
-            </svg>
+    <section class="page-panel page-panel--projects" data-view-index="1" id="panel-projects">
+      <canvas id="grid-backdrop" aria-hidden="true"></canvas>
+
+      <div class="projects-wrap" id="tilt-surface">
+        <div class="projects-heading">
+          <span class="projects-tag">Selected Work</span>
+          <h2 class="projects-title">Things I've built</h2>
+        </div>
+
+        <div class="project-entry" id="entry-neev">
+          <div class="project-entry-meta">
+            <span class="project-number">01</span>
+            <span class="project-field">Construction AI</span>
+          </div>
+          <div class="project-entry-main">
+            <h3 class="project-heading">Project Neev</h3>
+            <div class="project-preview">
+              <img src="assets/neev.gif" alt="Project Neev walkthrough">
+            </div>
+          </div>
+          <div class="project-entry-info">
+            <p class="project-summary">
+              AI-powered residential feasibility & cost estimation engine. Computer vision plot scanning,
+              genetic algorithm floor plan optimization, ML cost prediction calibrated against CPWD DSR 2025,
+              interactive 3D visualization. Covers 28 Indian cities.
+            </p>
+            <div class="project-stack">
+              <span>FastAPI</span><span>Three.js</span><span>Scikit-learn</span><span>OpenCV</span><span>Docker</span>
+            </div>
+            <a href="https://github.com/prawinin/project_neev" target="_blank" rel="noopener" class="project-link">
+              Source Code ↗
+            </a>
+          </div>
+        </div>
+
+        <div class="project-entry" id="entry-kinetic">
+          <div class="project-entry-meta">
+            <span class="project-number">02</span>
+            <span class="project-field">Computational Chemistry</span>
+          </div>
+          <div class="project-entry-main">
+            <h3 class="project-heading">KineticSketch</h3>
+            <div class="project-preview">
+              <img src="assets/kinetic.gif" alt="KineticSketch walkthrough">
+            </div>
+          </div>
+          <div class="project-entry-info">
+            <p class="project-summary">
+              Browser-native molecular dynamics workspace — interactive 2D chemical sketcher,
+              WebGL 3D conformer viewer, GNN/MLP atomic fluctuation predictor, ADME profiler,
+              drug repurposing engine, and AI-powered PyMOL assistant.
+            </p>
+            <div class="project-stack">
+              <span>RDKit</span><span>PyTorch</span><span>WebGL</span><span>Taipy</span><span>GNN</span>
+            </div>
+            <a href="https://github.com/prawinin/KineticSketch" target="_blank" rel="noopener" class="project-link">
+              Source Code ↗
+            </a>
+          </div>
+        </div>
+
+        <div class="project-entry" id="entry-craft">
+          <div class="project-entry-meta">
+            <span class="project-number">03</span>
+            <span class="project-field">Education · Developer Tools</span>
+          </div>
+          <div class="project-entry-main">
+            <h3 class="project-heading">Craft with AI</h3>
+            <div class="project-preview">
+              <img src="assets/craft.gif" alt="Craft with AI walkthrough">
+            </div>
+          </div>
+          <div class="project-entry-info">
+            <p class="project-summary">
+              A comprehensive, browser-first course that teaches the architecture of modern software engineering
+              and AI systems. Designed for building alongside AI coding assistants — Cursor, Copilot, Gemini.
+            </p>
+            <div class="project-stack">
+              <span>Interactive</span><span>Curriculum</span><span>AI-Native</span><span>Browser-First</span>
+            </div>
+            <a href="https://github.com/prawinin/craft-with-ai" target="_blank" rel="noopener" class="project-link">
+              Source Code ↗
+            </a>
+          </div>
+        </div>
+
+        <div class="project-entry" id="entry-legal">
+          <div class="project-entry-meta">
+            <span class="project-number">04</span>
+            <span class="project-field">Legal AI</span>
+          </div>
+          <div class="project-entry-main">
+            <h3 class="project-heading">Sunny Legal Assistant</h3>
+            
+          </div>
+          <div class="project-entry-info">
+            <p class="project-summary">
+              Domain-specialized 3B parameter LLM fine-tuned on 100,000+ Indian High Court & Supreme Court
+              judgments and 1,000+ legislative Acts. Built on Llama-3.2-3B, quantized to GGUF for lightweight
+              deployment.
+            </p>
+            <div class="project-stack">
+              <span>Llama-3.2</span><span>Fine-tuning</span><span>Legal NLP</span><span>GGUF</span>
+            </div>
+            <a href="https://huggingface.co/prawinin/sunny-legal-assistant-3b" target="_blank" rel="noopener" class="project-link">
+              Model Weights ↗
+            </a>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <section class="page-panel page-panel--contact" data-view-index="2" id="panel-contact">
+      <div class="contact-content">
+        <div class="intro-tag">Get In Touch</div>
+        <h2 class="contact-heading">Let's build<br>something.</h2>
+        <div class="contact-actions" >
+          <a class="btn-solid" href="https://calendly.com/prawinin" target="_blank" rel="noopener noreferrer">Schedule a Meeting &rarr;</a>
+          <a class="contact-link" href="mailto:prawin@vyapai.tech?subject=VyapAI%20%E2%80%94%20Enterprise%20Inquiry">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+            prawin@vyapai.tech
           </a>
-          <a href="mailto:prawin@vyapai.tech?subject=Resume%20Request%20-%20Prawin%20Kumar&body=Hi%20Prawin%2C%0A%0AI%20would%20like%20to%20request%20a%20copy%20of%20your%20resume.%20Looking%20forward%20to%20connecting.%0A%0ABest%20regards%2C" class="btn-outline">
-            <svg class="btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-              <path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/>
-              <polyline points="14 2 14 8 20 8"/>
-              <line x1="16" y1="13" x2="8" y2="13"/>
-              <line x1="16" y1="17" x2="8" y2="17"/>
-              <polyline points="10 9 9 9 8 9"/>
-            </svg>
-            Request Resume
-          </a>
-          <a href="https://github.com/prawinin" target="_blank" rel="noopener" class="btn-outline">
-            <svg class="btn-icon" viewBox="0 0 24 24" fill="currentColor">
-              <path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/>
-            </svg>
-            GitHub
-          </a>
+          <a href="https://github.com/prawinin" target="_blank" rel="noopener" class="btn-outline contact-github">GitHub ↗</a>
         </div>
       </div>
-    </div>
+    </section>
 
-    <div class="hero-scroll" aria-hidden="true">
-      <span class="hero-scroll-text">Scroll</span>
-      <div class="hero-scroll-line"></div>
-    </div>
-  </section>
+  </div>
 
-
-  <!-- ═══ ABOUT — Dark Intro Section ═══ -->
-  <section class="intro-section" id="about">
-    <div class="intro-bg" id="intro-bg"></div>
-    <div class="intro-section-inner">
-      <div class="intro-content reveal">
-        <p class="intro-greeting word-reveal">Hi, I'm</p>
-        <h2 class="intro-name word-reveal">Prawin Kumar.</h2>
-        <p class="intro-statement word-reveal">
-          I build AI enabled systems that deploy across every sector — from fine-tuned LLMs 
-          and legal intelligence to construction analysis engines and molecular dynamics workspaces.
-        </p>
-      </div>
-
-      <div class="intro-credentials reveal" style="transition-delay: 0.8s">
-        <span class="intro-cred">IIT Guwahati — BSc Data Science & AI</span>
-        <span class="intro-cred-dot">·</span>
-        <span class="intro-cred">Founder, <a href="https://vyapai.tech/" target="_blank" rel="noopener">VyapAI</a></span>
-      </div>
-    </div>
-  </section>
-
-
-  <!-- ═══ PROJECTS ═══ -->
-  <hr class="section-divider">
-  <section class="section" id="projects">
-    <div class="container">
-      <div class="section-header reveal">
-        <p class="section-label">Featured Projects</p>
-        <h2 class="section-title">Things I've <em>built</em></h2>
-        <p class="section-desc word-reveal">
-          End-to-end systems — not demos. Each project ships with production 
-          infrastructure, real data pipelines, and deployable architecture.
-        </p>
-      </div>
-
-      <div class="projects-grid">
-
-        <!-- Project Neev -->
-        <article class="project-card reveal" id="project-neev">
-          <div class="project-card-inner">
-            <div class="project-visual">
-              <img src="assets/neev.gif" alt="Project Neev feasibility & cost estimation interface walkthrough" loading="lazy">
-              <div class="project-visual-overlay"></div>
-            </div>
-            <div class="project-content">
-              <p class="project-domain">Construction AI</p>
-              <h3 class="project-title">Project Neev</h3>
-              <p class="project-desc word-reveal">
-                AI-powered residential feasibility &amp; cost estimation engine. 
-                Computer vision plot scanning, genetic algorithm floor plan optimization, 
-                ML cost prediction calibrated against CPWD DSR 2025, interactive 3D visualization, 
-                and professional DXF/PDF exports. Covers 28 Indian cities.
-              </p>
-              <div class="project-stack">
-                <span class="project-tag">FastAPI</span>
-                <span class="project-tag">Three.js</span>
-                <span class="project-tag">Scikit-learn</span>
-                <span class="project-tag">OpenCV</span>
-                <span class="project-tag">Docker</span>
-                <span class="project-tag">Streamlit</span>
-              </div>
-              <div class="project-actions">
-                <a href="https://github.com/prawinin/project_neev" target="_blank" rel="noopener" class="project-link">
-                  <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
-                  Source Code
-                </a>
-              </div>
-            </div>
-          </div>
-        </article>
-
-        <!-- KineticSketch -->
-        <article class="project-card reveal" id="project-kinetic">
-          <div class="project-card-inner">
-            <div class="project-visual">
-              <img src="assets/kinetic.gif" alt="KineticSketch molecular conformation visualizer walkthrough" loading="lazy">
-              <div class="project-visual-overlay"></div>
-            </div>
-            <div class="project-content">
-              <p class="project-domain">Computational Chemistry</p>
-              <h3 class="project-title">KineticSketch</h3>
-              <p class="project-desc word-reveal">
-                Browser-native molecular dynamics workspace — interactive 2D chemical sketcher, 
-                WebGL 3D conformer viewer, GNN/MLP atomic fluctuation predictor, ADME profiler, 
-                drug repurposing engine, and AI-powered PyMOL assistant. 
-                All in one unified web dashboard.
-              </p>
-              <div class="project-stack">
-                <span class="project-tag">RDKit</span>
-                <span class="project-tag">PyTorch</span>
-                <span class="project-tag">WebGL</span>
-                <span class="project-tag">Taipy</span>
-                <span class="project-tag">PyMOL</span>
-                <span class="project-tag">GNN</span>
-              </div>
-              <div class="project-actions">
-                <a href="https://github.com/prawinin/KineticSketch" target="_blank" rel="noopener" class="project-link">
-                  <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
-                  Source Code
-                </a>
-              </div>
-            </div>
-          </div>
-        </article>
-
-        <!-- Craft with AI -->
-        <article class="project-card reveal" id="project-craft">
-          <div class="project-card-inner">
-            <div class="project-visual">
-              <img src="assets/craft.gif" alt="Craft with AI software architecture visual platform walkthrough" loading="lazy">
-              <div class="project-visual-overlay"></div>
-            </div>
-            <div class="project-content">
-              <p class="project-domain">Education · Developer Tools</p>
-              <h3 class="project-title">Craft with AI</h3>
-              <p class="project-desc word-reveal">
-                A comprehensive, browser-first course that teaches the architecture 
-                of modern software engineering and AI systems. Designed specifically 
-                for building alongside AI coding assistants — Cursor, Copilot, Gemini. 
-                Not another boring bootcamp.
-              </p>
-              <div class="project-stack">
-                <span class="project-tag">Interactive</span>
-                <span class="project-tag">Curriculum</span>
-                <span class="project-tag">AI-Native</span>
-                <span class="project-tag">Browser-First</span>
-              </div>
-              <div class="project-actions">
-                <a href="https://github.com/prawinin/craft-with-ai" target="_blank" rel="noopener" class="project-link">
-                  <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
-                  Source Code
-                </a>
-              </div>
-            </div>
-          </div>
-        </article>
-
-      </div>
-    </div>
-  </section>
-
-
-  <!-- ═══ OPEN SOURCE MODELS ═══ -->
-  <hr class="section-divider">
-  <section class="section" id="models">
-    <div class="container">
-      <div class="section-header reveal">
-        <p class="section-label">Open Source</p>
-        <h2 class="section-title">HuggingFace <em>Models</em></h2>
-        <p class="section-desc word-reveal">
-          Fine-tuned and quantized LLMs released as open weights. 
-          From uncensored base models to domain-specialized legal AI.
-        </p>
-      </div>
-
-      <div class="models-grid reveal-stagger">
-
-        <!-- Sunny Legal Assistant (Featured) -->
-        <div class="model-card featured">
-          <div class="model-card-header">
-            <div class="model-icon">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-                <path d="M12 3v1m0 16v1m-8-9H3m18 0h-1M5.6 5.6l.7.7m12.4 12.4l-.7-.7M5.6 18.4l.7-.7m12.4-12.4l-.7.7"/>
-                <circle cx="12" cy="12" r="4"/>
-              </svg>
-            </div>
-            <div class="model-badges">
-              <span class="model-badge badge-params">3B</span>
-              <span class="model-badge badge-format">GGUF</span>
-              <span class="model-badge badge-domain">Legal AI</span>
-            </div>
-          </div>
-          <div class="model-name">sunny-legal-assistant-3b</div>
-          <div class="model-base">Base: meta-llama/Llama-3.2-3B</div>
-          <div class="model-desc word-reveal">
-            Domain-specialized LLM fine-tuned on a high-fidelity dataset of over 
-            <strong style="color:var(--text)">100,000 Indian High Court and Supreme Court judgments</strong> 
-            alongside <strong style="color:var(--text)">1,000+ foundational legislative Acts</strong>. 
-            Built for Indian legal intelligence — case law analysis, statutory interpretation, 
-            and legal reasoning.
-          </div>
-          <div class="model-footer">
-            <a href="https://huggingface.co/prawinin/sunny-legal-assistant-3b" target="_blank" rel="noopener" class="model-link">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 13L13 7M13 7H7M13 7V13"/><rect x="3" y="3" width="18" height="18" rx="3"/></svg>
-              View on HuggingFace
-            </a>
-          </div>
-        </div>
-
-        <!-- Llama 3.2 3B Uncensored -->
-        <div class="model-card">
-          <div class="model-card-header">
-            <div class="model-icon">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-                <path d="M21 16V8a2 2 0 00-1-1.73l-7-4a2 2 0 00-2 0l-7 4A2 2 0 003 8v8a2 2 0 001 1.73l7 4a2 2 0 002 0l7-4A2 2 0 0021 16z"/>
-                <polyline points="3.27 6.96 12 12.01 20.73 6.96"/>
-                <line x1="12" y1="22.08" x2="12" y2="12"/>
-              </svg>
-            </div>
-            <div class="model-badges">
-              <span class="model-badge badge-params">3B</span>
-              <span class="model-badge badge-format">SafeTensors</span>
-            </div>
-          </div>
-          <div class="model-name">Llama-3.2-3B-Uncensored</div>
-          <div class="model-base">Base: meta-llama/Llama-3.2-3B</div>
-          <div class="model-desc word-reveal">
-            Uncensored variant of Llama 3.2 3B. Removes alignment restrictions 
-            for research and development use cases. Available in SafeTensors 
-            and Q8_0 GGUF quantization.
-          </div>
-          <div class="model-footer">
-            <a href="https://huggingface.co/prawinin/Llama-3.2-3B-Uncensored" target="_blank" rel="noopener" class="model-link">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 13L13 7M13 7H7M13 7V13"/><rect x="3" y="3" width="18" height="18" rx="3"/></svg>
-              SafeTensors
-            </a>
-            <span style="color:var(--text-dim);margin:0 6px">·</span>
-            <a href="https://huggingface.co/prawinin/Llama-3.2-3B-Uncensored-Q8_0-GGUF" target="_blank" rel="noopener" class="model-link">
-              GGUF
-            </a>
-          </div>
-        </div>
-
-        <!-- Llama 3.1 8B Uncensored -->
-        <div class="model-card">
-          <div class="model-card-header">
-            <div class="model-icon">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-                <path d="M21 16V8a2 2 0 00-1-1.73l-7-4a2 2 0 00-2 0l-7 4A2 2 0 003 8v8a2 2 0 001 1.73l7 4a2 2 0 002 0l7-4A2 2 0 0021 16z"/>
-                <polyline points="3.27 6.96 12 12.01 20.73 6.96"/>
-                <line x1="12" y1="22.08" x2="12" y2="12"/>
-              </svg>
-            </div>
-            <div class="model-badges">
-              <span class="model-badge badge-params">8B</span>
-              <span class="model-badge badge-format">SafeTensors</span>
-            </div>
-          </div>
-          <div class="model-name">Llama-3.1-8B-Uncensored</div>
-          <div class="model-base">Base: meta-llama/Llama-3.1-8B</div>
-          <div class="model-desc word-reveal">
-            Uncensored variant of Llama 3.1 8B with alignment restrictions removed. 
-            Larger capacity model for more demanding research and 
-            unrestricted generation tasks.
-          </div>
-          <div class="model-footer">
-            <a href="https://huggingface.co/prawinin/Llama-3.1-8B-Uncensored" target="_blank" rel="noopener" class="model-link">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 13L13 7M13 7H7M13 7V13"/><rect x="3" y="3" width="18" height="18" rx="3"/></svg>
-              View on HuggingFace
-            </a>
-          </div>
-        </div>
-
-        <!-- Qwen 2.5 Coder 7B -->
-        <div class="model-card">
-          <div class="model-card-header">
-            <div class="model-icon">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-                <polyline points="16 18 22 12 16 6"/>
-                <polyline points="8 6 2 12 8 18"/>
-                <line x1="14" y1="4" x2="10" y2="20"/>
-              </svg>
-            </div>
-            <div class="model-badges">
-              <span class="model-badge badge-params">7B</span>
-              <span class="model-badge badge-format">SafeTensors</span>
-            </div>
-          </div>
-          <div class="model-name">Qwen2.5-Coder-7B-Uncensored</div>
-          <div class="model-base">Base: Qwen/Qwen2.5-Coder-7B</div>
-          <div class="model-desc word-reveal">
-            Uncensored code-specialized model based on Alibaba's Qwen 2.5 Coder. 
-            Optimized for unrestricted code generation, analysis, 
-            and technical assistance across languages.
-          </div>
-          <div class="model-footer">
-            <a href="https://huggingface.co/prawinin/Qwen2.5-Coder-7B-Uncensored" target="_blank" rel="noopener" class="model-link">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 13L13 7M13 7H7M13 7V13"/><rect x="3" y="3" width="18" height="18" rx="3"/></svg>
-              View on HuggingFace
-            </a>
-          </div>
-        </div>
-
-
-      </div>
-    </div>
-  </section>
-
-
-  <!-- ═══ VYAPAI BANNER ═══ -->
-  <hr class="section-divider">
-  <section class="vyapai-banner" id="vyapai">
-    <div class="vyapai-glow" aria-hidden="true"></div>
-    <div class="container">
-      <div class="vyapai-inner reveal">
-        <p class="vyapai-label">Enterprise Portfolio</p>
-        <h2 class="vyapai-title word-reveal">
-          The rest of my work<br>lives at <em>vyapai.tech</em>
-        </h2>
-        <p class="vyapai-desc word-reveal">
-          VyapAI is where I architect and deploy production-grade AI systems — 
-          legal intelligence, clinical workflows, M&amp;A analysis, and enterprise orchestration. 
-          Explore the full catalog.
-        </p>
-        <a href="https://vyapai.tech/" target="_blank" rel="noopener" class="vyapai-link">
-          Visit vyapai.tech
-          <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2">
-            <path d="M4 10H16M16 10L10 4M16 10L10 16"/>
-          </svg>
-        </a>
-      </div>
-    </div>
-  </section>
-
-
-  <!-- ═══ FOOTER ═══ -->
-  <footer class="footer" id="footer">
-    <div class="container footer-inner">
-      <div class="footer-left">
-        <p class="footer-tagline">Let's build something.</p>
-        <p class="footer-copy">&copy; 2026 Prawin Kumar. All rights reserved.</p>
-      </div>
-
-      <div class="footer-links">
-        <!-- GitHub -->
-        <a href="https://github.com/prawinin" target="_blank" rel="noopener" class="footer-link" aria-label="GitHub">
-          <svg viewBox="0 0 24 24" fill="currentColor">
-            <path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/>
-          </svg>
-        </a>
-        <!-- HuggingFace -->
-        <a href="https://huggingface.co/prawinin" target="_blank" rel="noopener" class="footer-link" aria-label="HuggingFace">
-          <svg viewBox="0 0 120 120" fill="currentColor">
-            <path d="M37.3 49.8c-3.6 0-6.6 4.1-6.6 9.3s3 9.3 6.6 9.3c3.7 0 6.6-4.2 6.6-9.3s-3-9.3-6.6-9.3zm45.4 0c-3.6 0-6.6 4.1-6.6 9.3s3 9.3 6.6 9.3c3.7 0 6.6-4.2 6.6-9.3s-2.9-9.3-6.6-9.3z"/>
-            <path d="M60 0C26.9 0 0 26.9 0 60s26.9 60 60 60 60-26.9 60-60S93.1 0 60 0zm0 103.5c-24 0-43.5-19.5-43.5-43.5S36 16.5 60 16.5s43.5 19.5 43.5 43.5-19.5 43.5-43.5 43.5z"/>
-            <path d="M60 75.8c-10.1 0-18.4 4.4-18.4 9.8h36.8c0-5.4-8.3-9.8-18.4-9.8z"/>
-          </svg>
-        </a>
-        <!-- VyapAI -->
-        <a href="https://vyapai.tech/" target="_blank" rel="noopener" class="footer-link" aria-label="VyapAI">
-          <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5">
-            <rect x="2" y="2" width="16" height="16" rx="3"/>
-            <path d="M7 13L13 7M13 7H9M13 7V11"/>
-          </svg>
-        </a>
-      </div>
-    </div>
-  </footer>
-
-  <script src="script.js" defer></script>
+  <script src="script.js"></script>
 </body>
 </html>
